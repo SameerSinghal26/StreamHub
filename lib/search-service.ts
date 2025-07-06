@@ -7,7 +7,7 @@ export const getSearch = async (term?: string) => {
     try {
         const self = await getself();
         userId = self.id;
-    } catch (error) {
+    } catch {
         userId = null;
     }
 

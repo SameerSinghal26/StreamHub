@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import { NextRequest } from "next/server";
 import { Webhook } from "svix";
-import { WebhookEvent } from "@clerk/nextjs/webhooks";
+import type { WebhookEvent } from "@clerk/clerk-sdk-node";
 import { db } from "@/lib/db";
 import { resetIngresses } from "@/actions/ingress"
 

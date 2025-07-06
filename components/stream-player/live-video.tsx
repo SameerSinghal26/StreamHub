@@ -42,6 +42,17 @@ export const LiveVideo = ({
         onVolumeChange(0);
     }, []);
 
+    useEffect(() => {
+        const handleFullscreenChange = () => {
+          setIsFullscreen(document.fullscreenElement !== null);
+        };
+      
+        document.addEventListener("fullscreenchange", handleFullscreenChange);
+        return () => {
+          document.removeEventListener("fullscreenchange", handleFullscreenChange);
+        };
+      }, []);
+
     const toggleFullscreen = () => {
         if(isFullscreen) {
             document.exitFullscreen()
@@ -51,12 +62,13 @@ export const LiveVideo = ({
         }
     };
 
-    const handleFullscreenChange = () => {
-        const isCurrentlyFullscreen = document.fullscreenElement !== null;
-        setIsFullscreen(isCurrentlyFullscreen);
-    };
+    // const handleFullscreenChange = () => {
+    //     const isCurrentlyFullscreen = document.fullscreenElement !== null;
+    //     setIsFullscreen(isCurrentlyFullscreen);
+    // };
 
-    useEventListener("fullscreenchange", handleFullscreenChange, wrapperRef);
+    // useEventListener("fullscreenchange", handleFullscreenChange, typeof document !== "undefined" ? document : null);
+
 
     useTracks([Track.Source.Camera, Track.Source.Microphone])
         .filter((track) => track.participant.identity === participant.identity)

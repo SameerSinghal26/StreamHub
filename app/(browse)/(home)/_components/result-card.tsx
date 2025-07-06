@@ -1,7 +1,7 @@
 import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail";
 import { Skeleton } from "@/components/ui/skeleton";
 import { UserAvatar, UserAvatarSkeleton } from "@/components/user-avatar";
-import { Stream, User } from "@prisma/client";
+import { User } from "@prisma/client";
 import Link from "next/link";
 
 interface ResultCardProps {
