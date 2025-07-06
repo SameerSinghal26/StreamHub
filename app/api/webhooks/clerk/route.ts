@@ -1,4 +1,3 @@
-import { verifyWebhook } from "@clerk/nextjs/webhooks";
 import { headers } from "next/headers";
 import { NextRequest } from "next/server";
 import { Webhook } from "svix";

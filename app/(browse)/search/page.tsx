@@ -8,17 +8,18 @@ interface SearchPageProps {
   };
 }
 
-const SearchPage = ({ searchParams }: SearchPageProps) => {
-  if (!searchParams.term) {
+export default function SearchPage({ searchParams }: SearchPageProps) {
+  const term = searchParams.term;
+
+  if (!term) {
     redirect("/");
   }
+
   return (
     <div className="h-full p-8 max-w-screen-2xl mx-auto">
-      <Suspense fallback={<ResultsSkeleton/>}>
-        <Results term={searchParams.term}/>
+      <Suspense fallback={<ResultsSkeleton />}>
+        <Results term={term} />
       </Suspense>
     </div>
   );
-};
-
-export default SearchPage;
+}

@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/store/use-sidebar";
-import { useState, useEffect } from "react";
 import { ToggleSkeleton } from "./toggle";
 import { RecommendedSkeleton } from "./recommended";
 import { FollowingSkeleton } from "./following";

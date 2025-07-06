@@ -1,5 +1,4 @@
 import { StreamPlayer } from "@/components/stream-player";
-import { isFollowingUser } from "@/lib/follow-service";
 import { getUserByUsername } from "@/lib/user-service";
 import { currentUser } from "@clerk/nextjs/server";
 
